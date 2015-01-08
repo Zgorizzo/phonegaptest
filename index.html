@@ -12,6 +12,8 @@
 <script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
 <script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
 <script type="text/javascript" href="js/bootstrap.js"></script>
+<script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
+
     <title>Home of Wild Side Bikers Group</title>
 
     <!-- Bootstrap core CSS -->
@@ -64,8 +66,16 @@ Your browser does not support the video tag.
 
  
     <script>
-   // alert('go');
-   var x =  $( ".loadVIdBtn" );
+
+ 
+    document.addEventListener("deviceready",onDeviceReady,false);
+    // Cordova is ready to be used!
+    //
+    function onDeviceReady() {
+    //some action
+   
+ 
+ 
 //alert(x);
       $( "#loadVIdBtn" ).bind( "click", function(event, ui) {
          //  e.preventDefault();
@@ -78,7 +88,7 @@ Your browser does not support the video tag.
             video.load();
             video.play();
       });
-
+ }
        /* $("#loadVIdBtn").click(function(e) {
 
             e.preventDefault();
