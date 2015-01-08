@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">  
  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
 <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<!-- <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script> -->
     <title>Home of Wild Side Bikers Group</title>
 
     <!-- Bootstrap core CSS -->
@@ -54,7 +54,7 @@
       </div>
     <div class="row">
       <div id="divVideo" class="col-sm-12">
- <video width="320" height="240"  controls >
+ <video width="320" height="240"  controls autoplay >
   <source id="srcId" src="http://www.wildsidemotorcycle.fr/pages/playvid/small" type="video/mp4">
   
 Your browser does not support the video tag.
@@ -70,7 +70,7 @@ Your browser does not support the video tag.
          //  e.preventDefault();
              
            var myval=  $('#vidname').val();
-              // alert('val:'+ myval);
+           alert('val:'+ myval);
              var videofile = 'http://www.wildsidemotorcycle.fr/pages/playvid/' + myval ;
             var video = $('#divVideo video')[0];
             video.src = videofile;
