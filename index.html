@@ -5,8 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+   
  
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">  
+ <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
     <title>Home of Wild Side Bikers Group</title>
 
     <!-- Bootstrap core CSS -->
@@ -30,23 +34,84 @@
         <h1>Bienvenue   </h1>
         <p><em>Association loi 1901</em>
         </p> 
-
+        
         <a href="#about" class="btn btn-default btn-lg">En savoir plus</a>
 
       
          </div>
       </div>
-    <div class="row">
+       <div class="row">
+      <div class="col-sm-6">
+        Entrer le nom
+      </div><div class="col-sm-6">
+      <input id="vidname" type="text" name="firstname">
+        </div>
+      </div>
+       <div class="row">
       <div class="col-sm-12">
+       <button id="loadVIdBtn" type="button">Click Me!</button>
+        </div>
+      </div>
+    <div class="row">
+      <div id="divVideo" class="col-sm-12">
  <video width="320" height="240"  controls >
-  <source src="http://www.wildsidemotorcycle.fr/pages/playvid/small" type="video/mp4">
+  <source id="srcId" src="http://www.wildsidemotorcycle.fr/pages/playvid/small" type="video/mp4">
   
 Your browser does not support the video tag.
 </video>
       </div></div>
- <script type="text/javascript" href="js/jquery.mobile-1.4.5.min.js"></script>
+
  <script type="text/javascript" href="js/bootstrap.js"></script>
-  
+    <script>
+   // alert('go');
+   var x =  $( ".loadVIdBtn" );
+//alert(x);
+      $( "#loadVIdBtn" ).bind( "click", function(event, ui) {
+         //  e.preventDefault();
+             
+           var myval=  $('#vidname').val();
+              // alert('val:'+ myval);
+             var videofile = 'http://www.wildsidemotorcycle.fr/pages/playvid/' + myval ;
+            var video = $('#divVideo video')[0];
+            video.src = videofile;
+            video.load();
+            video.play();
+      });
+
+       /* $("#loadVIdBtn").click(function(e) {
+
+            e.preventDefault();
+             alert('click');
+           var myval=  $('#loadVIdBtn').val();
+               alert('val:'+ myval);
+             var videofile = 'http://www.wildsidemotorcycle.fr/pages/playvid/';
+            var video = $('#divVideo video')[0];
+            video.src = videoFile;
+            video.load();
+            video.play();
+              
+            
+        });*/
+    
+       
+    /*
+      $(function() {
+        $('a[href*=#]:not([href=#])').click(function() {
+          if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') 
+            || location.hostname == this.hostname) {
+
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+            if (target.length) {
+              $('html,body').animate({
+                scrollTop: target.offset().top
+              }, 1000);
+              return false;
+            }
+          }
+        });
+      });*/
+    </script>
   </body>
 
 </html>
